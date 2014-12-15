@@ -1,0 +1,8 @@
+[
+	{
+		"keys": ["super+shift+z"], "command": "zen2han" 
+	},
+  {
+    "keys": ["super+alt+z"], "command": "kana2kana" 
+  }
+]
