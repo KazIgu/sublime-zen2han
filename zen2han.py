@@ -1,6 +1,7 @@
 import sublime, sublime_plugin
 import sys
-sys.path.append('/Users/iguchikazuya/Library/Application Support/Sublime Text 3/Packages/zen2han')
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '')
 import zenhan
 class Zen2hanCommand(sublime_plugin.TextCommand):
   def run(self, edit):
