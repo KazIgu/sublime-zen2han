@@ -28,3 +28,14 @@ class Kana2kanaCommand(sublime_plugin.TextCommand):
             elif select_texts != han2zen_text:
                 self.view.replace(edit, region, han2zen_text)
 
+
+class Han2zenCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    for region in self.view.sel():
+        select_texts = self.view.substr(region)
+
+        if select_texts != "":
+            han2zen_text = zenhan.hz(select_texts)
+            if select_texts != han2zen_text:
+                self.view.replace(edit, region, han2zen_text)
+

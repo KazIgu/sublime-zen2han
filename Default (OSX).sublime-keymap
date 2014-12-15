@@ -1,8 +1,11 @@
 [
+  {
+    "keys": ["super+shift+j"], "command": "han2zen"
+  },
 	{
-		"keys": ["super+shift+z"], "command": "zen2han" 
+		"keys": ["super+shift+z"], "command": "zen2han"
 	},
   {
-    "keys": ["super+alt+z"], "command": "kana2kana" 
+    "keys": ["super+alt+z"], "command": "kana2kana"
   }
 ]

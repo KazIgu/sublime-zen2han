@@ -2,20 +2,20 @@ import re, functools
 
 C_OFF = 0x80
 
-S_HIR = '、。「」　ー０１２３４５６７８９' \
-        'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん' \
+S_ZNUM = '、。「」　ー０１２３４５６７８９'
+S_HNUM = '､｡｢｣ -0123456789'
+
+S_HIR = 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん' \
         'っぁぃぅぇぉゃゅょ' \
         'がぎぐげござじずぜぞだぢづでどばびぶべぼゔ' \
         'ぱぴぷぺぽ' \
 
-S_ZEN = '、。「」　ー０１２３４５６７８９' \
-        'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン' \
+S_ZEN = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン' \
         'ッァィゥェォャュョ'  \
         'ガギグゲゴザジズゼゾダヂヅデドバビブベボヴ' \
         'パピプペポ'
 
-S_SEI = '､｡｢｣ -0123456789'  \
-        'ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝ' \
+S_SEI = 'ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝ' \
         'ｯｧｨｩｪｫｬｭｮ'
 
 S_DAK = 'ｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾊﾋﾌﾍﾎｳ'
@@ -47,14 +47,16 @@ zh=trans(S_ZEN, L_HAN)
 jh=comb(trans(S_HIR, L_HAN))
 hz=comb(subd, trans(S_HAN, S_ZEN))
 hj=comb(subd, trans(S_HAN, S_HIR))
+nzh=trans(S_ZNUM, S_HNUM)
+nhz=trans(S_HNUM, S_ZNUM)
 
 if __name__=='__main__':
     test('zen>han>zen', comb(zh, hz), S_ZEN)
     test('zen>hira>zen', comb(zj, jz), S_ZEN)
-    
+
     test('hira>zen>hira', comb(jz, zj), s_hir)
     test('hira>han>hira', comb(jh, hj), s_hir)
-    
+
     s_han=''.join(L_HAN)
     test('han>hira>han', comb(hj, jh), s_han)
     test('han>zen>han', comb(hz, zh), s_han)
