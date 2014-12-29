@@ -1,0 +1,10 @@
+[
+  {
+    "caption": "zen2han: Convert to Zen",
+    "command": "han2zen"
+  },
+  {
+    "caption": "zen2han: Convert to Han",
+    "command": "zen2han"
+  }
+]
