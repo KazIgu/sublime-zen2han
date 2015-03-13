@@ -2,6 +2,7 @@
   {
     "keys": ["super+shift+j"], "command": "han2zen"
   },
-	{
-		"keys": ["super+shift+z"], "command": "zen2han"
-	}]
+  {
+    "keys": ["super+ctrl+j"], "command": "zen2han"
+  }
+]

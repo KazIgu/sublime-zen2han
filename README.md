@@ -1,6 +1,7 @@
-# ZEN2HAN for Sublime Text 3
+# Zen2Han for Sublime Text 3
 
-全角カタカナ、半角カタカナの変換ツールです。
+For SublimeText3,  
+Convert Plugin of "Half-width kana" and "Full-width kana"
 
 ## Installation
 
@@ -19,11 +20,15 @@ The "Packages" directory is located at:
 
 ## Usage
 
-* **Convert to Zen** `super+shift+j` - 全角カタカナへ変換
-* **Convert to Han** `super+shift+z` - 半角カタカナへ変換
+* **Convert to Zen** `super+shift+j` - Convert to Full-width kana from Half-width kana
+* **Convert to Han** `super+ctrl+j` - Convert to Half-width kana from Full-width kana
 
 
 ### In Command Palette:
 
 * **zen2han: Convert to Zen**
 * **zen2han: Convert to Han**
+
+## LICENSE
+
+MIT

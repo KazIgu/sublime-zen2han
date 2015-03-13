@@ -1,5 +1,8 @@
 [
-	{
-		"keys": ["super+shift+z"], "command": "zen2han" 
-	}
+  {
+    "keys": ["alt+shift+j"], "command": "han2zen"
+  },
+  {
+    "keys": ["alt+ctrl+j"], "command": "zen2han"
+  }
 ]
